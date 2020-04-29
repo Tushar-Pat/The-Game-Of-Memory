@@ -1,0 +1,24 @@
+body{
+    background-color:burlywood;
+}
+
+.instructional{
+    background-color:black;
+    color:red;
+    margin:20px;
+    padding:5px;
+}
+
+.command{
+    background-color: purple;
+    color:yellow;
+    margin:20px;
+    padding:5px;
+}
+
+.userInput{
+    background-color: blue;
+    color:rgb(255, 102, 0);
+    margin:20px;
+    padding:5px;
+}
