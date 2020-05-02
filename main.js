@@ -1,37 +1,46 @@
-var userInput = 0;
-var output = 0;
-var nums = new Array[1, 2, 3, 4, 5, 5];
+var userInput = "";
+var output = "yoinks";
 var counter = 0;
+var arr = new Array("red", "green", "blue", "orange", "yellow", "purple");
+//var arr = new Array(6);
 
-function execute(){
-    userInput = document.getElementById("textInput");
+function execute() {
+    userInput = document.getElementById("textInput").value;
 
     removeIndex()
     findNewValue();
-    
-    document.write(output);
+
+    document.getElementById("output").innerHTML = output;
 }
 
-function removeIndex(){
-    if(counter == 5){
+function removeIndex() {
+    if (counter == 3) {
         window.alert("You win!!!");
-    }
-    
-    var valueExists = false;
-    for(var x = 0; x < nums.length; x++){
-        if(nums[x] == userInput){
-            valueExists = true;
-            nums.splice(x,1);
-            break;
+    } else {
+        var valueExists = false;
+        for (var x = 0; x < arr.length; x++) {
+            if (arr[x] == userInput) {
+                valueExists = true;
+                arr.splice(x, 1);
+                break;
+            }
         }
-    }
 
-    if(!valueExists){
-        window.alert("You lose :(");
+        if (!valueExists) {
+            window.alert("You lose :(");
+        }
+
+        counter += 1;
     }
 }
 
-function findNewValue(){
-    output = nums[0];
-    nums.splice(0,1);
+function findNewValue() {
+    output = arr[0];
+    arr.splice(0, 1);
+}
+
+//game type commands
+
+function colours(){
+    arr = colours;
 }
