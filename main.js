@@ -9,6 +9,15 @@ var countries = new Array("Canada", "USA", "India", "Mexico", "China", "France")
 
 //Main Game
 
+function cities() {
+    userInput = document.getElementById("textInput").value;
+
+    removeIndex();
+    findNewValue();
+
+    document.getElementById("output").innerHTML = output;
+}
+
 function execute() {
     userInput = document.getElementById("textInput").value;
 
@@ -16,6 +25,26 @@ function execute() {
     findNewValue();
 
     document.getElementById("output").innerHTML = output;
+}
+
+function findNewValue() {
+    output = arr[0];
+    arr.splice(0, 1);
+    counter+=1;
+}
+
+//game type commands (need to get working)
+
+function colours(){
+    var arr = Object.assign([],colours);
+    document.getElementById("output").innerHTML = "yoinks";
+}
+
+
+
+function countries(){
+    var arr = Object.assign([],countries);
+    document.getElementById("output").innerHTML = "yoinks";
 }
 
 function removeIndex() {
@@ -37,38 +66,4 @@ function removeIndex() {
 
         counter+=1;
     }
-}
-
-function findNewValue() {
-    output = arr[0];
-    arr.splice(0, 1);
-    counter+=1;
-}
-
-//game type commands (need to get working)
-
-function colours(){
-    //arr = Object.assign([], colours);
-
-    //arrLength = arr.length;
-
-    document.getElementById("output").innerHTML = "yoinks";
-}
-
-function cities(){
-    counter = 0;
-    for(var x = 0; x < arr.length; x++){
-        arr[x] = cities[x]
-    }
-
-    arrLength = cities.length;
-}
-
-function countries(){
-    counter = 0;
-    for(var x = 0; x < arr.length; x++){
-        arr[x] = countries[x]
-    }
-
-    arrLength = countries.length;
 }
